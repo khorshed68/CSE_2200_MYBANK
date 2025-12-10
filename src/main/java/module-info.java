@@ -16,17 +16,35 @@
 //    exports com.khorshed.mybank.mybankapp;
 //}
 
+//module com.khorshed.mybank.mybankapp {
+//    requires javafx.controls;
+//    requires javafx.fxml;
+//    requires java.sql;
+//
+//    // SQLite JDBC
+//    requires org.xerial.sqlitejdbc;
+//
+//    // Allow JavaFX to access packages via reflection (FXML loading)
+//    opens com.khorshed.mybank.mybankapp to javafx.fxml, javafx.graphics;
+//    opens com.khorshed.mybank.mybankapp.controllers to javafx.fxml;
+//
+//    // Export main package
+//    exports com.khorshed.mybank.mybankapp;
+//}
 module com.khorshed.mybank.mybankapp {
     requires javafx.controls;
     requires javafx.fxml;
-    requires java.sql;
+    requires java. sql;
 
     // SQLite JDBC
     requires org.xerial.sqlitejdbc;
 
     // Allow JavaFX to access packages via reflection (FXML loading)
-    opens com.khorshed.mybank.mybankapp to javafx.fxml, javafx.graphics;
-    opens com.khorshed.mybank.mybankapp.controllers to javafx.fxml;
+    opens com.khorshed.mybank. mybankapp to javafx.fxml, javafx.graphics;
+    opens com. khorshed.mybank.mybankapp.controllers to javafx.fxml;
+
+    // Allow JavaFX TableView to access model properties via reflection
+    opens com.khorshed.mybank.mybankapp.models to javafx.base;
 
     // Export main package
     exports com.khorshed.mybank.mybankapp;
