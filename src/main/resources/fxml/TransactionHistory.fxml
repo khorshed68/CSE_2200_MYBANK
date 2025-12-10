@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox alignment="TOP_CENTER" spacing="20.0" styleClass="root-container" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.khorshed.mybank.mybankapp.controllers.TransactionHistoryController">
+
+    <padding>
+        <Insets top="30.0" right="30.0" bottom="30.0" left="30.0" />
+    </padding>
+
+    <!-- Header -->
+    <Label text="Transaction History" styleClass="page-title">
+        <font>
+            <Font name="System Bold" size="36.0" />
+        </font>
+    </Label>
+
+    <!-- Search Container -->
+    <HBox spacing="15.0" alignment="CENTER" styleClass="search-container">
+        <padding>
+            <Insets top="10.0" right="10.0" bottom="10.0" left="10.0" />
+        </padding>
+
+        <Label text="Account Number:" styleClass="form-label">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+
+        <TextField fx:id="accountNumberField" promptText="Enter account number" styleClass="form-textfield" prefWidth="200.0" prefHeight="35.0">
+            <font>
+                <Font name="System" size="14.0" />
+            </font>
+        </TextField>
+
+        <Button text="View History" onAction="#viewHistory" styleClass="action-button" prefWidth="140.0" prefHeight="35.0">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Button>
+    </HBox>
+
+    <!-- Account Info -->
+    <Label fx:id="accountInfoLabel" text="" styleClass="info-label">
+        <font>
+            <Font name="System Bold" size="15.0" />
+        </font>
+    </Label>
+
+    <!-- Transaction Table -->
+    <TableView fx:id="transactionTable" styleClass="transaction-table" prefHeight="350.0" prefWidth="800.0">
+        <columns>
+            <TableColumn fx:id="idColumn" text="ID" prefWidth="60.0" />
+            <TableColumn fx:id="dateColumn" text="Date &amp; Time" prefWidth="180.0" />
+            <TableColumn fx:id="typeColumn" text="Transaction Type" prefWidth="280.0" />
+            <TableColumn fx:id="amountColumn" text="Amount ($)" prefWidth="150.0" />
+            <TableColumn fx:id="accountColumn" text="Account" prefWidth="130.0" />
+        </columns>
+    </TableView>
+
+    <!-- Message Label -->
+    <Label fx:id="messageLabel" text="" styleClass="message-label" wrapText="true">
+        <font>
+            <Font name="System" size="13.0" />
+        </font>
+    </Label>
+
+    <!-- Back Button -->
+    <Button text="Back to Dashboard" onAction="#backToDashboard" styleClass="back-button" prefWidth="200.0" prefHeight="45.0">
+        <font>
+            <Font name="System Bold" size="14.0" />
+        </font>
+    </Button>
+
+</VBox>
